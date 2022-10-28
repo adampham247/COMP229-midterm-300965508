@@ -59,7 +59,7 @@ employee.create(newEmployee, (err, employee) => {
 });
 
 // GET the Employee Details page in order to edit an existing Employee
-router.get("/:id", (req, res, next) => {
+router.get("/details/:id", (req, res, next) => {
   let id = req.params.id;
 
   employee.findById(id,(err, employeeToEdit) => {
@@ -70,13 +70,13 @@ router.get("/:id", (req, res, next) => {
     }
     else
     {
-      res.render('employees/edit', {title:'Edit Employee', employees:employeeToEdit})
+      res.render('employees/details', {title:'Edit Employee', employees:employeeToEdit})
     };
   });
 });
 
 // POST - process the information passed from the details form and update the document
-router.post("/:id", (req, res, next) => {
+router.post("/details/:id", (req, res, next) => {
   let id = req.params.id
   let updatedEmployee = employee({
     "_id": id,
@@ -100,7 +100,7 @@ router.post("/:id", (req, res, next) => {
 });
 
 // GET - process the delete by specific employeename
-router.get("/delete", (req, res, next) => {
+router.get("/delete:id", (req, res, next) => {
   let id = req.params.id;
   employee.remove({_id: id}, (err) =>{
     if(err)

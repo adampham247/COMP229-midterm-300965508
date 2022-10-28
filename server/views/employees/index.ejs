@@ -8,7 +8,7 @@
       <!-- ------------------------ -->
       <!-- FIX THE ADD BUTTON BELOW -->
       <!-- ------------------------ -->
-      <a href="add.ejs" class="btn btn-primary" role ="button">
+      <a href="employees/add" class="btn btn-primary" role ="button">
         <i class="fa fa-plus"></i> Add an employee</a
       >
       <br />
@@ -37,19 +37,19 @@
                 <!-- ------------------------ -->
                 <!-- ADD the EDIT BUTTON HERE -->
                 <!-- ------------------------ -->
-                <a href="/employees/edit/<%= employees[count]._id %>" class="btn btn-primary"> <i class="fa"></i>Edit</a>
+                <a href="/employees/details/<%= employees[count]._id %>" class="btn btn-primary"> <i class="fa"></i>Edit</a>
               </td>
             </tr>
             <% } %>
           </tbody>
         </table>
       </div>
-
+      <a href="/employees/delete<%= employees.Employeename %>" class="btn btn-warning btn-sm btn-danger"  >
+        <i class="fas"></i> Delete</a>
       <!-- ------------------------ -->
       <!-- ADD the DELETE BUTTON HERE -->
       <!-- ------------------------ -->
-      <a href="/employees/delete<%= employees.Employeename %>" class="btn btn-warning btn-sm btn-danger"  >
-        <i class="fas"></i> Delete</a>
+      
 
      
     </main>
