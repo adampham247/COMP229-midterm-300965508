@@ -1,7 +1,7 @@
 let mongoose = require("mongoose");
 
 // create a model class
-let Employee = mongoose.Schema(
+let Employee = new mongoose.Schema(
   {
     Employeeid: Number,
     Employeename: String,
@@ -13,5 +13,4 @@ let Employee = mongoose.Schema(
     collection: "employees",
   }
 );
-
-module.exports = mongoose.model("Employee", Employee);
+module.exports  =mongoose.model("Employee", Employee);
