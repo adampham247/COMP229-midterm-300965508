@@ -1,3 +1,9 @@
+/*
+Author's name: Thien Ngoc Duy Pham
+StudentID: 300965508
+Web App: COMP229-Midterm-300965508
+*/
+
 // modules required for routing
 let express = require("express");
 let router = express.Router();
