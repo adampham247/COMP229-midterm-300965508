@@ -16,19 +16,19 @@
         <table class="table table-bordered table-striped table-hover">
           <thead>
             <tr>
-              <th>Employee id</th>
-              <th class="text-center">Employee name</th>
+              <th class="text-cemter">Employee Id</th>
+              <th class="text-center">Employee Name</th>
               <th class="text-center">Department</th>
               <th class="text-center">Designation</th>
               <th class="text-center">Salary</th>
-              <th class="text-center"></th>
+              <th class="text-center">Modify</th>
             </tr>
           </thead>
           <tbody>
             <!-- Template Row -->
             <% for (let count = 0; count < employees.length; count++) { %>
             <tr>
-              <td><%= employees[count].Employeeid %></td>
+              <td class ="text-center"><%= employees[count].Employeeid %></td>
               <td class="text-center"><%= employees[count].Employeename %></td>
               <td class="text-center"><%= employees[count].Department %></td>
               <td class="text-center"><%= employees[count].Designation %></td>
@@ -38,19 +38,25 @@
                 <!-- ADD the EDIT BUTTON HERE -->
                 <!-- ------------------------ -->
                 <a href="/employees/details/<%= employees[count]._id %>" class="btn btn-primary"> <i class="fa"></i>Edit</a>
+                <a href="/employees/delete/<%= employees[count].Employeename %>" class="btn btn-primary">
+                  <i class="fas"></i> Delete</a>
               </td>
             </tr>
             <% } %>
           </tbody>
         </table>
       </div>
-      <a href="/employees/delete<%= employees.Employeename %>" class="btn btn-warning btn-sm btn-danger"  >
-        <i class="fas"></i> Delete</a>
+      
       <!-- ------------------------ -->
       <!-- ADD the DELETE BUTTON HERE -->
       <!-- ------------------------ -->
       
+      
+                 
+        
 
+
+        
      
     </main>
     

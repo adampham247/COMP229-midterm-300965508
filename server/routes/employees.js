@@ -47,7 +47,7 @@ router.post("/add", (req, res, next) => {
     "Salary" : req.body.Salary
  
 });
-employee.create(newEmployee, (err, employee) => {
+employee.create(newEmployee, (err) => {
   if(err)
   {
     console.log(err);
@@ -100,9 +100,11 @@ router.post("/details/:id", (req, res, next) => {
 });
 
 // GET - process the delete by specific employeename
-router.get("/delete:id", (req, res, next) => {
-  let id = req.params.id;
-  employee.remove({_id: id}, (err) =>{
+router.get("/delete/:Employeename", (req, res, next) => {
+  let removeEmp = req.params.Employeename
+  
+
+  employee.deleteOne({Employeename: removeEmp}, (err) => {
     if(err)
     {
       console.log(err);
@@ -110,9 +112,8 @@ router.get("/delete:id", (req, res, next) => {
     }
     else
     {
-      res.redirect('/employees');
-    }
-  })
+      res.redirect('/employees')
+    };
+  });
 });
-
 module.exports = router;
